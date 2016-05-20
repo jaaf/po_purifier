@@ -1,0 +1,1410 @@
+# Jibec <jean-baptiste@holcroft.fr>, 2015. #zanata
+# Jibec <jean-baptiste@holcroft.fr>, 2016. #zanata
+# José Fournier <jaaf64@zoraldia.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2015-12-15 14:06+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-05-06 10:17-0400\n"
+"Last-Translator: Jibec <jean-baptiste@holcroft.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 3.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-title, author Gé Baylard
+msgid "An Introduction to Disk Partitions"
+msgstr "Introduction au partitionnement des disques"
+
+msgid ""
+"This appendix is not necessarily applicable to architectures other than "
+"AMD64 and Intel&nbsp;64. However, the general concepts mentioned here may "
+"apply."
+msgstr ""
+"Cet appendice ne s'applique pas nécessairement aux architectures autres que "
+"AMD64 et Intel&nbsp;64. Néanmoins, les concepts généraux évoqués ici sont "
+"susceptibles de s'appliquer."
+
+msgid ""
+"This section discusses basic disk concepts, disk repartitioning strategies, "
+"the partition naming scheme used by Linux systems, and related topics."
+msgstr ""
+"Cette section traite des concepts de base sur les disques, leur "
+"partitionnement, le schéma de nommage des partitions utilisé par les "
+"systèmes Linux ainsi que des sujets en relation. "
+
+msgid ""
+"If you are comfortable with disk partitions, you can skip ahead to <xref "
+"linkend=\"sect-disk-partitions-making-room\" /> for more information on the "
+"process of freeing up disk space to prepare for a &PRODUCT; installation."
+msgstr ""
+"Si vous êtes à l'aise avec les partitions de disque, vous pouvez passer à la "
+"<xref linkend=\"sect-disk-partitions-making-room\" /> pour plus "
+"d'information sur la manière de libérer de l'espace disque afin de préparer "
+"l'installation de &PRODUCT;."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-title-2, author Gé Baylard
+msgid "Hard Disk Basic Concepts"
+msgstr "Concepts de base concernant les disques durs"
+
+msgid ""
+"Hard disks perform a very simple function - they store data and reliably "
+"retrieve it on command."
+msgstr ""
+"La fonction des disques durs s'énonce simplement – ils stockent des données "
+"et permettent de les retrouver d'une manière fiable."
+
+msgid ""
+"When discussing issues such as disk partitioning, it is important to have a "
+"understanding of the underlying hardware; however, since the theory is very "
+"complicated and expansive, only the basic concepts will be explained here. "
+"This appendix uses a set of simplified diagrams of a disk drive to help "
+"explain what is the process and theory behind partitions."
+msgstr ""
+"Lorsque l'on discute des problèmes relatifs au partitionnement des disques, "
+"il importe d'avoir une bonne compréhension du matériel sous-jacent ; "
+"néanmoins, comme la théorie est très compliquée et longue, nous nous "
+"contenterons de n'évoquer ici que les concepts de base. Cette appendice "
+"utilise un jeu de diagrammes simplifiés du disque dur qui aide à faire "
+"comprendre ce que recouvre le concept de partition d'un point de vue "
+"pratique et théorique."
+
+msgid ""
+"<xref linkend=\"figu-partitions-unused-drive\" />, shows a brand-new, unused "
+"disk drive."
+msgstr ""
+"La <xref linkend=\"figu-partitions-unused-drive\" /> présente un disque tout "
+"neuf et non encore utilisé."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "An Unused Disk Drive"
+msgstr "Un disque dur tout neuf"
+
+msgid "File Systems"
+msgstr "Systèmes de fichiers"
+
+msgid ""
+"To store data on a disk drive, it is necessary to <firstterm>format</"
+"firstterm> the disk drive first. Formatting (usually known as \"making a "
+"<firstterm>file system</firstterm>\") writes information to the drive, "
+"creating order out of the empty space in an unformatted drive."
+msgstr ""
+"Pour pouvoir utiliser un disque et y placer des données, la première chose à "
+"faire est de le <firstterm>formater</firstterm>. Le formatage "
+"(habituellement connu comme la « création d'un <firstterm>système de "
+"fichiers</firstterm> ») écrit des informations sur le disque, créant ainsi "
+"un espace ordonné dans l'espace sans repère du disque non formaté. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with a File System"
+msgstr "Disque dur avec un système de fichiers"
+
+msgid ""
+"As <xref linkend=\"figu-partitions-formatted-drive\" />, implies, the order "
+"imposed by a file system involves some trade-offs:"
+msgstr ""
+"Comme le montre la <xref linkend=\"figu-partitions-formatted-drive\" />, "
+"l'ordre imposé par le système de fichiers implique un certain nombre de "
+"compromis :"
+
+msgid ""
+"A small percentage of the driver's available space is used to store file "
+"system-related data and can be considered as overhead."
+msgstr ""
+"Un petit pourcentage de l'espace disponible du disque sert à stocker des "
+"données relatives au système de fichiers lui-même et peut être considéré "
+"comme un coût indirect."
+
+msgid ""
+"A file system splits the remaining space into small, consistently-sized "
+"segments. For Linux, these segments are known as <firstterm>blocks</"
+"firstterm>. <footnote> <para> Blocks really <emphasis>are</emphasis> "
+"consistently sized, unlike our illustrations. Keep in mind, also, that an "
+"average disk drive contains thousands of blocks. The picture is simplified "
+"for the purposes of this discussion. </para> </footnote>"
+msgstr ""
+"Un système de fichiers divise l'espace restant en segments de taille petite "
+"mais constante. Dans Linux, ces segments sont appelés <firstterm>blocs</"
+"firstterm>. <footnote> <para> Les blocs <emphasis>sont</emphasis> d'une "
+"taille constante, contrairement à notre illustration. Gardez bien à l'esprit "
+"qu'un disque de taille moyenne contient des milliers de blocs. Cette "
+"illustration est simplifiée pour les besoins de l'explication. </para> </"
+"footnote>"
+
+msgid ""
+"Note that there is no single, universal file system. As <xref linkend=\"figu-"
+"partitions-different-file-system\" />, shows, a disk drive may have one of "
+"many different file systems written on it. Different file systems tend to be "
+"incompatible; that is, an operating system that supports one file system (or "
+"a handful of related file system types) may not support another. However, "
+"&PRODUCT; supports a wide variety of file systems (including many commonly "
+"used by other operating systems such as Microsoft Windows), making data "
+"interchange between different file systems easy."
+msgstr ""
+"Notez bien qu'il n'y a pas un système de fichiers unique et universel. Comme "
+"le montre la <xref linkend=\"figu-partitions-different-file-system\" />, un "
+"disque dur peut contenir plusieurs systèmes de fichiers différents. Les "
+"différents systèmes de fichiers sont incompatibles ; ce qui veut dire qu'un "
+"système d'exploitation qui prend en charge un système de fichiers (ou un "
+"groupe de types de système de fichiers apparentés) peut ne pas en prendre en "
+"charge un autre. Néanmoins, &PRODUCT; prend en charge une grande variété de "
+"systèmes de fichiers (y compris beaucoup des systèmes de fichiers utilisés "
+"couramment par d'autres systèmes d'exploitation tels que Microsoft Windows) "
+"facilitant ainsi l'échange de données entre différents systèmes de fichiers. "
+""
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with a Different File System"
+msgstr "Disque dur avec un système de fichiers différent"
+
+msgid ""
+"Writing a file system to disk is only the first step. The goal of this "
+"process is to actually <emphasis>store</emphasis> and <emphasis>retrieve</"
+"emphasis> data. The figure below shows a drive disk after some data have "
+"been written to it:"
+msgstr ""
+"Créer un système de fichiers sur un disque n'est qu'une première étape. Le "
+"but de ce processus est d'y <emphasis>stocker</emphasis> et d'y "
+"<emphasis>retrouver</emphasis> des données. La figure qui suit présente un "
+"disque après que quelques données y ont été écrites."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with Data Written to It"
+msgstr "Disque dur avec des données écrites dessus"
+
+msgid ""
+"As <xref linkend=\"figu-partitions-drive-with-data\" />, shows, some of the "
+"previously-empty blocks are now holding data. However, by just looking at "
+"this picture, we cannot determine exactly how many files reside on this "
+"drive. There may only be one file or many, as all files use at least one "
+"block and some files use multiple blocks. Another important point to note is "
+"that the used blocks do not have to form a contiguous region; used and "
+"unused blocks may be interspersed. This is known as "
+"<firstterm>fragmentation</firstterm>. Fragmentation can play a part when "
+"attempting to resize an existing partition."
+msgstr ""
+"Comme la <xref linkend=\"figu-partitions-drive-with-data\" /> le montre, "
+"quelques un des blocs précédemment vides contiennent maintenant des données. "
+"Cependant, en nous contentant de regarder cette figure, nous ne pouvons pas "
+"dire exactement combien de fichiers résident sur ce disque. Il peut tout "
+"aussi bien y en avoir un comme plusieurs, sachant qu'un fichier utilise au "
+"moins un bloc mais peut en utiliser plusieurs. Un autre point important à "
+"noter est que les blocs utilisés n'ont pas besoin d'être contigus ; des "
+"blocs libres peuvent être intercalés entre des blocs utilisés. Ce phénomène "
+"est connu sous le nom de <firstterm>fragmentation</firstterm>. La "
+"fragmentation est à prendre en compte lors du redimensionnement d'une "
+"partition existante."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-para-7, author Gé Baylard
+msgid ""
+"As with most computer-related technologies, disk drives changed over time "
+"after their introduction. In particular, they got bigger. Not larger in "
+"physical size, but bigger in their capacity to store information. And, this "
+"additional capacity drove a fundamental change in the way disk drives were "
+"used."
+msgstr ""
+"Comme c'est le cas pour la plupart des techniques relatives aux ordinateurs, "
+"les lecteurs de disques ont changé depuis leurs débuts. En particulier, il "
+"sont devenus plus gros. Non pas dans leurs dimensions physiques, mais dans "
+"leur capacité de stockage d'informations. Cette capacité additionnelle a "
+"entraîné des changements fondamentaux dans la manière de les utiliser."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-title-4, author Gé Baylard
+msgid "Partitions: Turning One Drive Into Many"
+msgstr "Partitions : découpage d'un disque en plusieurs"
+
+msgid ""
+"Disk drives can be divided into <firstterm>partitions</firstterm>. Each "
+"partition can be accessed as if it was a separate disk. This is done through "
+"the addition of a <firstterm>partition table</firstterm>."
+msgstr ""
+"On peut diviser un disque en plusieurs <firstterm>partitions</firstterm>. On "
+"peut alors accéder à chacune des partitions comme si elle était un disque "
+"distinct. Cela est rendu possible par la création d'une <firstterm>table des "
+"partitions</firstterm>."
+
+msgid ""
+"There are several reasons for allocating disk space into separate disk "
+"partitions, for example:"
+msgstr ""
+"Plusieurs raisons motivent l'allocation de l'espace disque sous forme de "
+"partitions séparées ; par exemple :"
+
+msgid "Logical separation of the operating system data from the user data"
+msgstr ""
+"le désir de séparer les données du système d'exploitation de celle de "
+"l'utilisateur ;"
+
+msgid "Ability to use different file systems"
+msgstr "avoir la possibilité d'utiliser des systèmes de fichiers différents ;"
+
+msgid "Ability to run multiple operating systems on one machine"
+msgstr ""
+"avoir la possibilité de faire cohabiter plusieurs systèmes d'exploitation "
+"sur une seule machine. "
+
+msgid ""
+"There are currently two partitioning layout standards for physical hard "
+"disks: Master Boot Record (<acronym>MBR</acronym>) and GUID Partition Table "
+"(<acronym>GPT</acronym>). <acronym>MBR</acronym> is an older method of disk "
+"partitioning used with BIOS-based computers. <acronym>GPT</acronym> is a "
+"newer partitioning layout that is a part of the Unified Extensible Firmware "
+"Interface (<acronym>UEFI</acronym>). This section and <xref linkend=\"sect-"
+"disk-partitions-extended\" /> mainly describe the <firstterm>Master Boot "
+"Record</firstterm> (<acronym>MBR</acronym>) disk partitioning scheme. For "
+"information about the <firstterm>GUID Partition Table</firstterm> "
+"(<acronym>GPT</acronym>) partitioning layout, see <xref linkend=\"sect-disk-"
+"partitioning-guid-partition-table\" />."
+msgstr ""
+"Actuellement, il existe deux arrangements standard des partitions sur un "
+"disque dur : celui régit par l'Enregistrement maître de démarrage (Master "
+"Boot Record – <acronym>MBR</acronym>) et celui régit par la table des "
+"partitions GUID (GUID Partition Table – <acronym>GPT</acronym>). "
+"<acronym>MBR</acronym> est une méthode traditionnelle de partitionnement des "
+"disques sur les systèmes dotés d'un micrologiciel BIOS. <acronym>GPT</"
+"acronym> est un nouveau schéma de partitionnement qui fait partie de "
+"l'Interface logicielle extensible unifiée (Unified Extensible Firmaware "
+"Interface - <acronym>UEFI</acronym>). Cette section et la <xref linkend="
+"\"sect-disk-partitions-extended\" /> décrivent essentiellement le schéma de "
+"partitionnement <acronym>MBR</acronym>. Pour des informations sur le "
+"partitionnement <acronym>GPT</acronym> reportez-vous à la <xref linkend="
+"\"sect-disk-partitioning-guid-partition-table\" />."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_complete-note-1, author Gé Baylard
+msgid ""
+"While the diagrams in this chapter show the partition table as being "
+"separate from the actual disk drive, this is not entirely accurate. In "
+"reality, the partition table is stored at the very start of the disk, before "
+"any file system or user data. But for clarity, they are separate in our "
+"diagrams."
+msgstr ""
+"Alors que les schémas de ce chapitre montrent la table de partitions comme "
+"étant séparée du disque réel, la chose n'est pas tout à fait exacte. En "
+"réalité, la table des partitions est stockée en tout début du disque, avant "
+"tout système de fichiers ou donnée utilisateur. Mais pour plus de clarté "
+"nous l'avons séparée dans nos schémas."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with Partition Table"
+msgstr "Disque dur avec table des partitions"
+
+msgid ""
+"As <xref linkend=\"figu-partitions-partition-table\" /> shows, the partition "
+"table is divided into four sections or four <firstterm>primary</firstterm> "
+"partitions. A primary partition is a partition on a hard drive that can "
+"contain only one logical drive (or section). Each section can hold the "
+"information necessary to define a single partition, meaning that the "
+"partition table can define no more than four partitions."
+msgstr ""
+"Comme le montre la <xref linkend=\"figu-partitions-partition-table\" /> la "
+"table des partitions comprend quatre entrées qui décrivent chacune une "
+"partition sur le disque. Ces partitions sont qualifiées de "
+"<firstterm>primaires</firstterm> par opposition aux partitions "
+"<firstterm>logiques</firstterm> qui seront introduites plus loin dans cette "
+"section. "
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-para-10, author Gé Baylard
+msgid ""
+"Each partition table entry contains several important characteristics of the "
+"partition:"
+msgstr ""
+"Chaque entrée de table des partitions contient plusieurs caractéristiques "
+"importantes concernant la partition :"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-2, author Gé Baylard
+msgid "The points on the disk where the partition starts and ends"
+msgstr "les points sur le disque où la partition commence et finit ;"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-2, author Gé Baylard
+msgid "Whether the partition is \"active\""
+msgstr "le caractère « actif » ou non de la partition ;"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-2, author Gé Baylard
+msgid "The partition's type"
+msgstr "le type de la partition."
+
+msgid ""
+"The starting and ending points define the partition's size and location on "
+"the disk. The \"active\" flag is used by some operating systems' boot "
+"loaders. In other words, the operating system in the partition that is "
+"marked \"active\" is booted."
+msgstr ""
+"Les points de départ et de fin déterminent la taille de la partition et son "
+"emplacement sur le disque. Le drapeau « active » est utilisé par les "
+"chargeurs de démarrage de certains systèmes d'exploitation pour déterminer "
+"où se trouve le système d'exploitation à charger."
+
+msgid ""
+"The type is a number that identifies the partition's anticipated usage. Some "
+"operating systems use the partition type to denote a specific file system "
+"type, to flag the partition as being associated with a particular operating "
+"system, to indicate that the partition contains a bootable operating system, "
+"or some combination of the three."
+msgstr ""
+"Le type est un nombre que identifie l'usage attendu de la partition. "
+"Certains systèmes d'exploitation utilisent ce type pour caractériser un type "
+"spécifique de système de fichiers, pour marquer la partition comme étant "
+"associée à un type particulier de système de fichiers, pour indiquer que la "
+"partition contient un système d'exploitation amorçable ou pour une "
+"combinaison des trois.."
+
+msgid ""
+"See <xref linkend=\"figu-partitions-single-part\" /> for an example of a "
+"disk drive with single partition."
+msgstr ""
+"Voir la figure <xref linkend=\"figu-partitions-single-part\" /> pour un "
+"exemple de disque avec une seule partition."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive With Single Partition"
+msgstr "Disque dur avec une seule partition"
+
+msgid ""
+"The single partition in this example is labeled as <literal>DOS</literal>. "
+"This label shows the <emphasis>partition type</emphasis>, with <literal>DOS</"
+"literal> being one of the most common ones. The table below shows a list of "
+"some of the commonly used partition types and hexadecimal numbers used to "
+"represent them."
+msgstr ""
+"La partition unique dans cette exemple est étiquetée <literal>DOS</literal>. "
+"Cette étiquette indique le <emphasis>type de partition</emphasis>, "
+"<literal>DOS</literal> étant l'un des plus communs. Le tableau ci-après "
+"présente une liste des types de partition les plus utilisés ainsi que leur "
+"représentation hexadécimale. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions_common-table-title-1
+msgid "Partition Types"
+msgstr "Types de partition"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Partition Type"
+msgstr "Type de partition"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Value"
+msgstr "Valeur"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Empty"
+msgstr "Vide"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "00"
+msgstr "00"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Novell Netware 386"
+msgstr "Novell Netware 386"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "65"
+msgstr "65"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "DOS 12-bit FAT"
+msgstr "DOS avec FAT sur 12 bits"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "01"
+msgstr "01"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "PIC/IX"
+msgstr "PIC/IX"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "75"
+msgstr "75"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "XENIX root"
+msgstr "racine XENIX"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "02"
+msgstr "02"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Old MINIX"
+msgstr "Anciennes MINIX"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "80"
+msgstr "80"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "XENIX usr"
+msgstr "XENIX usr"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "03"
+msgstr "03"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Linux/MINUX"
+msgstr "Linux/MINUX"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "81"
+msgstr "81"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "DOS 16-bit &lt;=32M"
+msgstr "DOS avec FAT sur 16 bits &lt;=32 Mo"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "04"
+msgstr "04"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Linux swap"
+msgstr "Mémoire virtuelle Linux"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "82"
+msgstr "82"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Extended"
+msgstr "Étendue"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "05"
+msgstr "05"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Linux native"
+msgstr "Native Linux"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "83"
+msgstr "83"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "DOS 16-bit &gt;=32"
+msgstr "DOS FAT sur 16 bits &gt;=32 Mo"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "06"
+msgstr "06"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Linux extended"
+msgstr "Linux étendue"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "85"
+msgstr "85"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "OS/2 HPFS"
+msgstr "OS/2 HPFS"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "07"
+msgstr "07"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Amoeba"
+msgstr "Amoeba"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "93"
+msgstr "93"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "AIX"
+msgstr "AIX"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "08"
+msgstr "08"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Amoeba BBT"
+msgstr "Amoeba BBT"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "94"
+msgstr "94"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "AIX bootable"
+msgstr "AIX amorçable"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "09"
+msgstr "09"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "BSD/386"
+msgstr "BSD/386"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "a5"
+msgstr "a5"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "OS/2 Boot Manager"
+msgstr "Gestionnaire de démarrage OS/2"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "0a"
+msgstr "0a"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "OpenBSD"
+msgstr "OpenBSD"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "a6"
+msgstr "a6"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Win95 FAT32"
+msgstr "Win95 FAT32"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "0b"
+msgstr "0b"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "NEXTSTEP"
+msgstr "NEXTSTEP"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "a7"
+msgstr "a7"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Win95 FAT32 (LBA)"
+msgstr "Win95 FAT32 (LBA)"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "0c"
+msgstr "0c"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "BSDI fs"
+msgstr "BSDI fs"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "b7"
+msgstr "b7"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Win95 FAT16 (LBA)"
+msgstr "Win95 FAT16 (LBA)"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "0e"
+msgstr "0e"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "BSDI swap"
+msgstr "Mémoire virtuelle BSDI"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "b8"
+msgstr "b8"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Win95 Extended (LBA)"
+msgstr "Win95 étendue (LBA)"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "0f"
+msgstr "0f"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Syrinx"
+msgstr "Syrinx"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "c7"
+msgstr "c7"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Venix 80286"
+msgstr "Venix 80286"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "40"
+msgstr "40"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "CP/M"
+msgstr "CP/M"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "db"
+msgstr "db"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Novell"
+msgstr "Novell"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "51"
+msgstr "51"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "DOS access"
+msgstr "accès DOS"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "e1"
+msgstr "e1"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "PReP Boot"
+msgstr "Amorçage PReP"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "41"
+msgstr "41"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "DOS R/O"
+msgstr "DOS R/O"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "e3"
+msgstr "e3"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "GNU HURD"
+msgstr "GNU HURD"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "63"
+msgstr "63"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "DOS secondary"
+msgstr "DOS secondaire"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "f2"
+msgstr "f2"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Novell Netware 286"
+msgstr "Novell Netware 286"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "64"
+msgstr "64"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "BBT"
+msgstr "BBT"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "ff"
+msgstr "ff"
+
+msgid "Partitions Within Partitions - An Overview of Extended Partitions"
+msgstr ""
+"Partitions dans une partition - Vue d'ensemble des partitions étendues"
+
+msgid ""
+"In case four partitions are insufficient for your needs, you can use "
+"<firstterm>extended partitions</firstterm> to create up additional "
+"partitions. You do this by setting the type of a partition to \"Extended\"."
+msgstr ""
+"Dans le cas où quatre partitions ne vous suffiraient pas, vous pouvez "
+"utiliser une <firstterm>partition étendue</firstterm> en vue de créer des "
+"partitions supplémentaire . Pour cela vous devez attribuer à la partition le "
+"type \"Extended\"."
+
+msgid ""
+"An extended partition is like a disk drive in its own right - it has its own "
+"partition table which points to one or more partitions (now called "
+"<firstterm>logical partitions</firstterm>, as opposed to the four "
+"<firstterm>primary partitions</firstterm>) contained entirely within the "
+"extended partition itself. <xref linkend=\"figu-partitions-extended\" />, "
+"shows a disk drive with one primary partition and one extended partition "
+"containing two logical partitions (along with some unpartitioned free space)."
+""
+msgstr ""
+"Une partition étendue peut contenir plusieurs partitions (maintenant "
+"appelées <firstterm>partitions logiques</firstterm> par opposition aux "
+"quatre <firstterm>partitions primaires</firstterm> vues précédemment). "
+"Chacune de ces partitions logique est précédée d'un secteur (appelé Extended "
+"Boot Record (<acronym>EBR</acronym>) utilisé à la manière d'un MBR, à la "
+"différence que deux entrées de partition seulement sont utilisées. l'une qui "
+"pointe sur la partition logique elle-même, l'autre qui pointe sur l'EBR de "
+"la partition logique suivante. Les partitions sont ainsi chaînées et leur "
+"nombre n'est plus limité que par la capacité du disque lui-même et par "
+"l'étendue adressable. "
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Disk Drive With Extended Partition"
+msgstr "Disque dur avec partition étendue"
+
+msgid ""
+"As this figure implies, there is a difference between primary and logical "
+"partitions - there can only be four primary partitions, but there is no "
+"fixed limit to the number of logical partitions that can exist. However, due "
+"to the way in which partitions are accessed in Linux, no more than 12 "
+"logical partitions should be defined on a single disk drive."
+msgstr ""
+"Comme cette figure le sous-entend, il y a une différence entre les "
+"partitions primaires et les partitions logiques – il ne peut y avoir que "
+"quatre partitions primaires, mais il n'y a pas de limite au nombre de "
+"partitions logiques qui peuvent exister. Cependant, à cause de la manière "
+"avec laquelle on accède aux partitions sous Linux, on ne doit pas dépasser "
+"12 partitions logiques sur un seul disque."
+
+msgid "GUID Partition Table (GPT)"
+msgstr "Table des partitions GUID (GPT)"
+
+msgid ""
+"GUID Partition Table (<acronym>GPT</acronym>) is a newer partitioning scheme "
+"based on using Globally Unique Identifiers (<acronym>GUID</acronym>). "
+"<acronym>GPT</acronym> was developed to cope with limitations of the "
+"<acronym>MBR</acronym> partition table, especially with the limited maximum "
+"addressable storage space of a disk. Unlike <acronym>MBR</acronym>, which is "
+"unable to address storage space larger than 2.2 terabytes, <acronym>GPT</"
+"acronym> can be used with hard disks larger than this; the maximum "
+"addressable disk size is 2.2 zettabytes. In addition, <acronym>GPT</acronym> "
+"by default supports creating up to 128 primary partitions. This number could "
+"be extended by allocating more space to the partition table."
+msgstr ""
+"La table des partitions GUID (<acronym>GPT</acronym>) est un nouveau "
+"principe de partitionnement qui utilise les identifiants unique globaux "
+"(<acronym>GUID</acronym>). La <acronym>GPT</acronym> a été développée pour "
+"s'affranchir des limitations de la table des partitions <acronym>MBR</"
+"acronym>, en particulier de sa capacité d'adressage limitée sur le disque. À "
+"la différence de la table des partitions <acronym>MBR</acronym> qui est "
+"incapable d'adresser un espace de stockage plus grand que 2,2 teraoctets, la "
+"<acronym>GPT</acronym> peut être utilisée avec des disque bien plus grands ; "
+"l'espace adressable atteint 2,2 zettaoctets.  De plus, la <acronym>GPT</"
+"acronym> peut accueillir 128 entrées de partition. Ce nombre peut être "
+"étendu en allouant plus d'espace à la table des partitions."
+
+msgid ""
+"<acronym>GPT</acronym> disks use logical block addressing (LBA) and the "
+"partition layout is as follows:"
+msgstr ""
+"Les disques <acronym>GPT</acronym> utilisent l'adressage par blocs logiques "
+"(LBA) et le partitionnement se fait comme indiqué ci-dessous :"
+
+msgid ""
+"To preserve backward compatibility with MBR disks, the first sector "
+"(<acronym>LBA</acronym> 0) of <acronym>GPT</acronym> is reserved for "
+"<acronym>MBR</acronym> data and it is called <quote>protective MBR</quote>."
+msgstr ""
+"Pour conserver la rétro-compatibilité avec les disques MBR, le premier "
+"secteur (<acronym>LBA</acronym> 0) d'un disque <acronym>GPT</acronym> est "
+"réservé pour des données de type <acronym>MBR</acronym>. Ce premier secteur "
+"est appel : <quote>protective MBR</quote>."
+
+msgid ""
+"The <firstterm>primary <acronym>GPT</acronym> header</firstterm> begins on "
+"the second logical block (<acronym>LBA</acronym> 1) of the device. The "
+"header contains the disk GUID, the location of the primary partition table, "
+"the location of the secondary GPT header, and CRC32 checksums of itself and "
+"the primary partition table. It also specifies the number of partition "
+"entries of the table."
+msgstr ""
+"Le premier <firstterm>en-tête <acronym>GPT</acronym> primaire</firstterm> "
+"commence au second bloc logique (<acronym>LBA</acronym> 1) du disque. Cet en-"
+"tête contient le GUID du disque, l'emplacement de la table primaire des "
+"partitions, l'emplacement de l'en-tête GPT secondaire et des sommes de "
+"contrôle CRC32 de lui-même et de la table primaire des partitions. Il "
+"indique aussi le nombre d'entrées de partition de la table. "
+
+msgid ""
+"The <firstterm>primary <acronym>GPT</acronym> table</firstterm> includes, by "
+"default, 128 partition entries, each with an entry size 128 bytes, its "
+"partition type GUID and unique partition GUID."
+msgstr ""
+"La <firstterm>table <acronym>GPT</acronym> primaire</firstterm> comprend 128 "
+"entrées de partition par défaut. Chaque entrée utilise 128 octets et "
+"contient le GUID du type de la partition et le GUID de la partition. "
+
+msgid ""
+"The <firstterm>secondary <acronym>GPT</acronym> table</firstterm> is "
+"identical to the primary <acronym>GPT</acronym> table. It is used mainly as "
+"a backup table for recovery in case the primary partition table is corrupted."
+""
+msgstr ""
+"La <firstterm>table <acronym>GPT</acronym> secondaire</firstterm> est "
+"identique à la table <acronym>GPT</acronym> primaire. Elle est utilisée en "
+"tant que copie de sauvegarde pour récupération des données en cas de "
+"corruption de la table primaire. "
+
+msgid ""
+"The <firstterm>secondary <acronym>GPT</acronym> header</firstterm> is "
+"located on the last logical sector of the disk and it can be used to recover "
+"<acronym>GPT</acronym> information in case the primary header is corrupted. "
+"It contains the disk GUID, the location of the secondary partition table and "
+"the primary <acronym>GPT</acronym> header, CRC32 checksums of itself and the "
+"secondary partition table, and the number of possible partition entries."
+msgstr ""
+"L'<firstterm>en-tête <acronym>GPT</acronym> secondaire </firstterm> est "
+"situé sur le dernier secteur logique du disque et peut être utilisé pour "
+"récupérer les informations <acronym>GPT</acronym> en cas de corruption de "
+"l'en-tête primaire. Il contient le GUID du disque, l'emplacement de la table "
+"secondaire des partitions, l'emplacement de l'en-tête <acronym>GPT</acronym> "
+"primaie, les sommes de contrôle CRC32 de lui-même et de la table secondaire "
+"des partition ainsi que le nombre d'entrées de partition de la table."
+
+msgid ""
+"There must be a BIOS boot partition for the boot loader to be installed "
+"successfully onto a disk that contains a GPT (GUID Partition Table). This "
+"includes disks initialized by <application>Anaconda</application>. If the "
+"disk already contains a BIOS boot partition, it can be reused."
+msgstr ""
+"Une partition de démarrage BIOS (BIOS boot partition) doit exister sur un "
+"disque GPT pour que le chargeur de démarrage puisse y être installé avec "
+"succès. Cela inclut les disques initialisés par <application>Anaconda</"
+"application>. Si le disque contient déjà une telle partition, elle peut être "
+"réutilisée. "
+
+msgid "Strategies for Disk Repartitioning"
+msgstr "Stratégies de re-partitionnement des disques"
+
+msgid ""
+"There are several different ways that a disk can be repartitioned. This "
+"section discusses the following possible approaches:"
+msgstr ""
+"Le re-partitionnement des disques peut se faire de différentes manières. "
+"Cette section aborde les approches possibles suivantes :"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-3, author Gé Baylard
+msgid "Unpartitioned free space is available"
+msgstr "de l'espace libre non partitionné est disponible ;"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-3, author Gé Baylard
+msgid "An unused partition is available"
+msgstr "une partition inutilisée est disponible ;"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-itemizedlist-3, author Gé Baylard
+msgid "Free space in an actively used partition is available"
+msgstr "de l'espace libre dans une partition active est disponible."
+
+msgid ""
+"Note that this section discusses the aforementioned concepts only "
+"theoretically and it does not include any procedures showing how to perform "
+"disk repartitioning step-by-step. Such detailed information are beyond the "
+"scope of this document."
+msgstr ""
+"Notez bien que cette section n'aborde les cas envisagés ci-dessus que d'une "
+"manière théorique. En aucun cas elle ne présente dans le détail les étapes "
+"des procédures de re-partitionnement. Une information aussi détaillée est au-"
+"delà du champ de ce document."
+
+msgid ""
+"Keep in mind that the following illustrations are simplified in the interest "
+"of clarity and do not reflect the exact partition layout that you encounter "
+"when actually installing &PRODUCT;."
+msgstr ""
+"Gardez à l'esprit que les illustrations suivantes sont simplifiées et ne "
+"reflètent pas l'arrangement exact des partitions que vous rencontrerez en "
+"installant &PRODUCT;."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-title-7, author Gé Baylard
+msgid "Using Unpartitioned Free Space"
+msgstr "Utilisation de l'espace libre non partitionné"
+
+msgid ""
+"In this situation, the partitions already defined do not span the entire "
+"hard disk, leaving unallocated space that is not part of any defined "
+"partition. <xref linkend=\"figu-partitions-unused-space\" />, shows what "
+"this might look like."
+msgstr ""
+"Dans une telle situation, les partitions existantes n'utilisent pas "
+"l'intégralité du disque et laissent un espace libre qu'aucune partition "
+"n'utilise. La <xref linkend=\"figu-partitions-unused-space\" /> présente ce "
+"à quoi cela ressemble. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with Unpartitioned Free Space"
+msgstr "Disque dur avec un espace libre non partitionné"
+
+msgid ""
+"In the above example, <wordasword>1</wordasword> represents an undefined "
+"partition with unallocated space and <wordasword>2</wordasword> represents a "
+"defined partition with allocated space."
+msgstr ""
+"Dans l'exemple ci-dessus, <wordasword>1</wordasword> représente une "
+"partition non définie avec un espace non alloué et <wordasword>2</"
+"wordasword> représente une partition définie avec de l'espace alloué."
+
+msgid ""
+"An unused hard disk also falls into this category. The only difference is "
+"that <emphasis>all</emphasis> the space is not part of any defined partition."
+""
+msgstr ""
+"Un disque vierge tombe également dans cette catégorie. La seule différence "
+"est que <emphasis>tout</emphasis> l'espace est libre et n'appartient à "
+"aucune partition. "
+
+msgid ""
+"In any case, you can create the necessary partitions from the unused space. "
+"Unfortunately, this scenario, although very simple, is not very likely "
+"(unless you have just purchased a new disk just for &PRODUCT;). Most pre-"
+"installed operating systems are configured to take up all available space on "
+"a disk drive (see <xref linkend=\"sect-disk-partitions-active-partition\" /"
+">)."
+msgstr ""
+"Dans tous les cas, vous pouvez créer les partitions nécessaires dans "
+"l'espace libre. Malheureusement, ce scénario, bien que très simple, n'est "
+"pas très probable (sauf si vous venez tout juste d'acheter un disque neuf "
+"réservé à &PRODUCT;). Tous les systèmes pré-installés sont configurés pour "
+"utiliser tout l'espace disponible sur le disque (voir la <xref linkend="
+"\"sect-disk-partitions-active-partition\" />)."
+
+# translation auto-copied from project Fedora Installation Guide, version f17, document Partitions_common-title-8, author jfenal
+msgid "Using Space from an Unused Partition"
+msgstr "Utilisation de l'espace d'une partition inutilisée"
+
+msgid ""
+"In this case, maybe you have one or more partitions that you do not use any "
+"longer. <xref linkend=\"figu-partitions-unused-partition\" />, illustrates "
+"such a situation."
+msgstr ""
+"Dans ce cas vous disposez d'une ou plusieurs partitions qui ne sont plus "
+"utilisées. La <xref linkend=\"figu-partitions-unused-partition\" /> illustre "
+"cette situation."
+
+msgid "Disk Drive with an Unused Partition"
+msgstr "Disque avec un partition non utilisée"
+
+msgid ""
+"In the above example, <wordasword>1</wordasword> represents an unused "
+"partition and <wordasword>2</wordasword> represents reallocating an unused "
+"partition for Linux."
+msgstr ""
+"Das l'exemple ci-dessus, <wordasword>1</wordasword> représente une partition "
+"inutilisée et <wordasword>2</wordasword> représente la ré-allocation d'une "
+"partition inutilisée pour Linux. "
+
+msgid ""
+"In this situation, you can use the space allocated to the unused partition. "
+"You first must delete the partition and then create the appropriate Linux "
+"partition(s) in its place. You can delete the unused partition and manually "
+"create new partitions during the installation process."
+msgstr ""
+"Dans cette situation, vous pouvez utiliser l'espace alloué à la partition "
+"inutilisée. Vous devez d'abord la supprimer et créer les partitions Linux "
+"appropriées à sa place. Vous pouvez la supprimer à la main et créer les "
+"nouvelles partitions pendant le processus d'installation."
+
+# translation auto-copied from project Fedora Installation Guide, version f17, document Partitions_common-title-9, author jfenal
+msgid "Using Free Space from an Active Partition"
+msgstr "Utilisation de l'espace disponible d'une partition active"
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-para-22, author Gé Baylard
+msgid ""
+"This is the most common situation. It is also, unfortunately, the hardest to "
+"handle. The main problem is that, even if you have enough free space, it is "
+"presently allocated to a partition that is already in use. If you purchased "
+"a computer with pre-installed software, the hard disk most likely has one "
+"massive partition holding the operating system and data."
+msgstr ""
+"C'est la situation la plus courante. Elle est aussi, malheureusement, la "
+"plus difficile à gérer. Le principal problème est que, même si vous avez "
+"suffisamment d'espace libre, ce dernier est actuellement alloué à une "
+"partition déjà en cours d'utilisation. Si vous avez acheté un ordinateur "
+"avec des logiciels pré-installés, le disque dur a probablement une grande "
+"partition contenant le système d'exploitation et les données."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-para-23, author Gé Baylard
+msgid ""
+"Aside from adding a new hard drive to your system, you have two choices:"
+msgstr ""
+"À part d'ajouter un nouveau disque dur sur le système, vous avez deux "
+"possibilités :"
+
+msgid "<emphasis>Destructive Repartitioning</emphasis>"
+msgstr "<emphasis>Re-partitionnement destructif</emphasis>"
+
+msgid ""
+"In this case, the single large partition is deleted and several smaller ones "
+"are created instead. Any data held in the original partition is destroyed. "
+"This means that making a complete backup is necessary. It is highly "
+"recommended to make two backups, use verification (if available in your "
+"backup software), and try to read data from the backup <emphasis>before</"
+"emphasis> deleting the partition."
+msgstr ""
+"Dans ce cas, la grande partition unique est supprimée et plusieurs "
+"partitions plus petites sont créées à sa place. Toutes les données contenues "
+"dans la partition d'origine sont perdues. Ceci signifie qu'une copie de "
+"sauvegarde s'impose. Il est très recommandé d'effectuer cette copie de "
+"sauvegarde en double. Servez-vous des fonctionnalités de vérification (si "
+"elles existent dans votre logiciel de sauvegarde) et essayez de relire les "
+"données de la copie de sauvegarde <emphasis>avant</emphasis> d'effacer la "
+"partition."
+
+msgid ""
+"If an operating system was installed on that partition, it must be "
+"reinstalled if you want to use that system as well. Be aware that some "
+"computers sold with pre-installed operating systems may not include the "
+"installation media to reinstall the original operating system. You should "
+"check whether this applies to your system is <emphasis>before</emphasis> you "
+"destroy your original partition and its operating system installation."
+msgstr ""
+"Si un système d'exploitation occupait cette partition, il doit être "
+"réinstallé si vous désirez continuer à utiliser ce système. Soyez conscient "
+"que quelques ordinateurs vendus avec un système d'exploitation pré-installé "
+"ne sont pas fournis avec le média de réinstallation. Vous devez vous assurez "
+"que ce n'est pas le cas de votre système <emphasis>avant</emphasis> de "
+"détruire votre partition d'origine et son système d'exploitation. "
+
+msgid ""
+"After creating a smaller partition for your existing operating system, you "
+"can reinstall software, restore your data, and start the installation. <xref "
+"linkend=\"figu-partitions-destructive-repartitioning\" /> shows this being "
+"done."
+msgstr ""
+"Après avoir créé une partition plus petite pour votre système d'exploitation "
+"existant, vous pouvez le ré-installer, restaurer vos données et débuter "
+"l'installation de &PRODUCT;. La <xref linkend=\"figu-partitions-destructive-"
+"repartitioning\" /> montre le déroulement de ce processus. "
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions_common-title-10, author Gé Baylard
+msgid "Disk Drive Being Destructively Repartitioned"
+msgstr "Disque dur en cours de partitionnement destructif"
+
+msgid ""
+"In the above example, <wordasword>1</wordasword> represents before and "
+"<wordasword>2</wordasword> represents after."
+msgstr ""
+"Dans l'exemple précédent, <wordasword>1</wordasword> représente l'état du "
+"disque avant l'opération et <wordasword>2</wordasword> représente l'état du "
+"disque après l'opération."
+
+msgid "Any data previously present in the original partition is lost."
+msgstr ""
+"Sans leur copie de sauvegarde et leur restauration, toutes les données de la "
+"partition d'origine aurait été perdues."
+
+msgid "<emphasis>Non-Destructive Repartitioning</emphasis>"
+msgstr "<emphasis>Re-partitionnement non destructif</emphasis>"
+
+msgid ""
+"With non-destructive repartitioning you execute a program that makes a big "
+"partition smaller without losing any of the files stored in that partition. "
+"This method is usually reliable, but can be very time-consuming on large "
+"drives."
+msgstr ""
+"Dans ce cas, vous utilisez un programme capable de réduire la taille d'une "
+"grande partition sans perte de données. Cette méthode est généralement "
+"fiable mais peut prendre beaucoup de temps sur les grands disques."
+
+msgid ""
+"While the process of non-destructive repartitioning is rather "
+"straightforward, there are three steps involved:"
+msgstr ""
+"Bien que le processus de re-partitionnement non destructif soit plutôt "
+"simple, il se déroule en trois étapes :"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Compress and backup existing data"
+msgstr "Réfragmentation et sauvegarde des données existantes"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Resize the existing partition"
+msgstr "Redimensionnement de la partition existante"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Create new partition(s)"
+msgstr "Création de nouvelles partitions"
+
+msgid "Each step is described further in more detail."
+msgstr "Chacune des étapes est décrite en détail plus bas."
+
+msgid "Compress Existing Data"
+msgstr "Défragmentation des données"
+
+msgid ""
+"As the following figure shows, the first step is to compress the data in "
+"your existing partition. The reason for doing this is to rearrange the data "
+"such that it maximizes the available free space at the \"end\" of the "
+"partition."
+msgstr ""
+"Comme le montre la figure suivante, la première étape est de compresser les "
+"données dans votre partition existante. Le but recherché est de réarranger "
+"les données pour libérer le maximum d'espace libre en fin de partition."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive Being Compressed"
+msgstr "Disque dur en cours de défragmentation"
+
+msgid ""
+"This step is crucial. Without it, the location of the data could prevent the "
+"partition from being resized to the extent desired. Note also that, for one "
+"reason or another, some data cannot be moved. If this is the case (and it "
+"severely restricts the size of your new partition(s)), you may be forced to "
+"destructively repartition your disk."
+msgstr ""
+"Cette étape est cruciale. Sans elle, l'emplacement des données peut empêcher "
+"le redimensionnement de la partition à la taille souhaitée. Notez également "
+"que, pour une raison ou pour une autre, certaines données ne peuvent être "
+"déplacées. Dans ce cas (et cela engendre une sérieuse contrainte sur la "
+"taille de votre(vos) nouvelle(s) partition(s), vous pouvez être amené(e) à "
+"envisager le re-partitionnement déstructif). "
+
+msgid "Resize the Existing Partition"
+msgstr "Redimensionnement de la partition existante"
+
+msgid ""
+"<xref linkend=\"figu-partitions-resize-existing\" /> shows the actual "
+"resizing process. While the actual result of the resizing operation varies "
+"depending on the software used, in most cases the newly freed space is used "
+"to create an unformatted partition of the same type as the original "
+"partition."
+msgstr ""
+"La <xref linkend=\"figu-partitions-resize-existing\" /> présente le "
+"déroulement du processus de redimensionnement. Bien que le résultat réel de "
+"l'opération de redimensionnement varie selon le logiciel utilisé, dans la "
+"plupart des cas, l'espace libéré est utilisé pour créer une partition non "
+"formatée du même type que la partition d'origine. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Drive with Partition Resized"
+msgstr "Disque dur avec partition redimensionnée"
+
+msgid ""
+"It is important to understand what the resizing software you use does with "
+"the newly freed space, so that you can take the appropriate steps. In the "
+"case illustrated here, it would be best to delete the new DOS partition and "
+"create the appropriate Linux partition(s)."
+msgstr ""
+"Il est important de comprendre ce que le logiciel de redimensionnement que "
+"vous utilisez fait de l'espace libéré. Vous pouvez ainsi suivre les étapes "
+"appropriées. Dans le cas illustré ici, il vaut mieux supprimer la nouvelle "
+"partition DOS et créer les partitions Linux requises à sa place. "
+
+msgid ""
+"As the previous step implied, it may or may not be necessary to create new "
+"partitions. However, unless your resizing software is Linux-aware, it is "
+"likely that you must delete the partition that was created during the "
+"resizing process. <xref linkend=\"figu-partitions-final-configuration\" />, "
+"shows this being done."
+msgstr ""
+"Comme l'impliquait les étapes suivies précédemment, la création de nouvelles "
+"partitions peut être nécessaire ou pas. Cependant, à moins que votre "
+"logiciel de re-partitionnement ne soit « compatible Linux », il est probable "
+"que vous deviez supprimer la partition créée lors du processus de "
+"redimensionnement. La <xref linkend=\"figu-partitions-final-configuration\" /"
+"> présente le déroulement de ce processus."
+
+# translation auto-copied from project Fedora Installation Guide, version f20, document Partitions-x86
+msgid "Disk Drive with Final Partition Configuration"
+msgstr "Disque dur avec configuration finale des partitions"
+
+msgid "Partition Naming Schemes and Mount Points"
+msgstr "Schéma de nommage des partitions et points de montage"
+
+msgid ""
+"A common source of confusion for users unfamiliar with Linux is the matter "
+"of how partitions are used and accessed by the Linux operating system. In "
+"DOS/Windows, it is relatively simple: Each partition gets a \"drive letter."
+"\" You then use the correct drive letter to refer to files and directories "
+"on its corresponding partition. This is entirely different from how Linux "
+"deals with partitions and, for that matter, with disk storage in general. "
+"This section describes the main principles of partition naming scheme and "
+"the way how partitions are accessed in &PRODUCT;."
+msgstr ""
+"Un point qui génère beaucoup de confusion chez les nouveaux venus à Linux "
+"est le manière dont ce système d'exploitation utilise les partitions et y "
+"accède. Sous DOS/Windows, la chose est relativement simple : chaque "
+"partition reçoit une lettre distinctive. Vous utilisez ensuite cette lettre "
+"pour faire référence aux fichiers et aux dossiers sur la partition "
+"correspondante. Cela est complétement différent de la façon dont Linux "
+"procède avec les partitions et, sur ce sujet, avec le stockage sur disque en "
+"général. Cette section décrit les principes généraux de nommage des "
+"partitions et d'accès à ces dernières dans &PRODUCT;."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Partition Naming Scheme"
+msgstr "Système de nommage des partitions"
+
+msgid ""
+"Linux uses a naming scheme that is file-based, with file names in the form "
+"of <filename>/dev/<replaceable>xxyN</replaceable></filename>."
+msgstr ""
+"Linux utilise un schéma de nommage basé sur les fichiers, avec des noms de "
+"fichiers de la forme <filename>/dev/<replaceable>xxyN</replaceable></"
+"filename>."
+
+msgid "Device and partition names consist of the following:"
+msgstr ""
+"Les noms de périphérique et de partition se décompose comme expliqué ci-"
+"après :"
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "<filename>/dev/</filename>"
+msgstr "<filename>/dev/</filename>"
+
+msgid ""
+"This is the name of the directory in which all device files reside. Because "
+"partitions reside on hard disks, and hard disks are devices, the files "
+"representing all possible partitions reside in <filename>/dev/</filename>."
+msgstr ""
+"C'est le nom du dossier dans lequel résident tous les fichiers de "
+"périphérique. Parce que les partitions résident sur les disques et que les "
+"disques sont des périphériques, les fichiers représentant toutes les "
+"partitions possibles résident dans <filename>/dev/</filename> – « dev » "
+"étant l'abréviation de « device » soit « périphérique » en français."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "<filename><replaceable>xx</replaceable></filename>"
+msgstr "<filename><replaceable>xx</replaceable></filename>"
+
+msgid ""
+"The first two letters of the partition name indicate the type of device on "
+"which the partition resides, usually <filename>sd</filename>."
+msgstr ""
+"Les deux premières lettres du nom de la partition font référence au type de "
+"périphérique sur lequel elle réside, ordinairement <filename>sd</filename>."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "<filename><replaceable>y</replaceable></filename>"
+msgstr "<filename><replaceable>y</replaceable></filename>"
+
+msgid ""
+"This letter indicates which device the partition is on. For example, "
+"<filename>/dev/sda</filename> for the first hard disk, <filename>/dev/sdb</"
+"filename> for the second, and so on."
+msgstr ""
+"Cette lettre distingue le périphérique porteur de la partition des autres "
+"périphériques de même type. Par exemple, <filename>/dev/sda</filename> "
+"représente le premier disque dur, <filename>/dev/sdb</filename> représente "
+"le second et ainsi de suite. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "<filename><replaceable>N</replaceable></filename>"
+msgstr "<filename><replaceable>N</replaceable></filename>"
+
+msgid ""
+"The final number denotes the partition. The first four (primary or extended) "
+"partitions are numbered <filename>1</filename> through <filename>4</"
+"filename>. Logical partitions start at <filename>5</filename>. So, for "
+"example, <filename>/dev/sda3</filename> is the third primary or extended "
+"partition on the first hard disk, and <filename>/dev/sdb6</filename> is the "
+"second logical partition on the second hard disk."
+msgstr ""
+"Le chiffre (nombre) terminal distingue la partition des autres partitions du "
+"même périphérique. Les quatre partitions (primaires ou étendues ) sont "
+"numérotées de <filename>1</filename> à <filename>4</filename>. Les "
+"partitions logiques sont numérotées à partir de <filename>5</filename>. "
+"Ainsi, par exemple, <filename>/dev/sda3</filename> est la troisième "
+"partition primaire ou étendue sur le disque <filename>/dev/sdb6</filename> "
+"est la deuxième partition logique sur le disque."
+
+msgid ""
+"Even if your system can identify and refer to all types of disk partitions, "
+"it might not be able to <emphasis>read</emphasis> the file system and "
+"therefore access stored data on every partition type. However, in many "
+"cases, it is possible to successfully access data on a partition dedicated "
+"to another operating system."
+msgstr ""
+"Même si votre système est capable d'identifier et de référencer tous les "
+"types de partitions, il se peut qu'il ne puisse <emphasis>lire</emphasis> le "
+"système de fichiers, et par conséquent accéder aux donnés, de chacun des "
+"types de partition. Cependant, dans de nombreux cas, il est possible "
+"d'accéder aux données d'une partition dédiée à un autre système "
+"d'exploitation. "
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "Disk Partitions and Mount Points"
+msgstr "Partitions de disque et points de montage"
+
+msgid ""
+"Each partition is used to form part of the storage necessary to support a "
+"single set of files and directories. This is done by associating a partition "
+"with a directory through a process known as <firstterm>mounting</firstterm>. "
+"Mounting a partition makes its storage available starting at the specified "
+"directory (known as a <firstterm>mount point</firstterm>)."
+msgstr ""
+"Chacune des partitions est utilisée en tant que partie d'une arborescence "
+"unique de dossiers et de fichiers. Cela est rendu possible en rattachant la "
+"partition à un dossier de cette arborescence par une opération connue sous "
+"le nom de <firstterm>montage</firstterm>. Monter une partition rend les "
+"dossiers et fichiers qu'elle contient accessibles depuis le dossier auquel "
+"elle a été rattachée. Ce point de rattachement dans l'arborescence unique "
+"s'appelle : <firstterm>point de montage</firstterm>."
+
+msgid ""
+"For example, if partition <filename>/dev/sda5</filename> is mounted on "
+"<filename>/usr/</filename>, that would mean that all files and directories "
+"under <filename>/usr/</filename> physically reside on <filename>/dev/sda5</"
+"filename>. So the file <filename>/usr/share/doc/FAQ/txt/Linux-FAQ</filename> "
+"would be stored on <filename>/dev/sda5</filename>, while the file <filename>/"
+"etc/gdm/custom.conf</filename> would not."
+msgstr ""
+"Par exemple, si la partition <filename>/dev/sda5</filename> est montée sur "
+"<filename>/usr/</filename>, cela signifie que tous les dossiers et fichiers "
+"dans la branche <filename>/usr/</filename> de l'arborescence résident "
+"physiquement sur <filename>/dev/sda5</filename>. Ainsi, le fichier "
+"<filename>/usr/share/doc/FAQ/txt/Linux-FAQ</filename> est stocké sur "
+"<filename>/dev/sda5</filename>, alors que le fichier <filename>/etc/gdm/"
+"custom.conf</filename> ne l'est pas. "
+
+msgid ""
+"Continuing the example, it is also possible that one or more directories "
+"below <filename>/usr/</filename> would be mount points for other partitions. "
+"For instance, a partition (say, <filename>/dev/sda7</filename>) could be "
+"mounted on <filename>/usr/local/</filename>, meaning that <filename>/usr/"
+"local/man/whatis</filename> would then reside on <filename>/dev/sda7</"
+"filename> rather than <filename>/dev/sda5</filename>."
+msgstr ""
+"Dans la continuité de cet exemple, il est aussi possible qu'un ou plusieurs "
+"dossiers de la branche <filename>/usr/</filename> soient des points de "
+"montage pour d'autres partitions. Par exemple, une partition (disons, "
+"<filename>/dev/sda7</filename>) pourrait être montée sur <filename>/usr/"
+"local/</filename>, ce qui voudrait dire que <filename>/usr/local/man/whatis</"
+"filename> résiderait non plus sur <filename>/dev/sda5</filename> mais sur "
+"<filename>/dev/sda7</filename>."
+
+# translation auto-copied from project Fedora Installation Guide, version f19, document pot/Partitions-x86
+msgid "How Many Partitions?"
+msgstr "Nombre de partitions requis"
+
+msgid ""
+"At this point in the process of preparing to install &PRODUCT;, you should "
+"give some consideration to the number and size of the partitions to be used "
+"by your new operating system. However, there is no one right answer to this "
+"question. It depends on your needs and requirements."
+msgstr ""
+"À ce stade de la préparation à l'installation de &PRODUCT;, vous devez vous "
+"poser la question du nombre et de la taille des partitions pour votre "
+"nouveau système d'exploitation. Il n'existe cependant pas de réponse unique "
+"à cette question. Cela dépend de vos besoins et exigences. "
+
+msgid ""
+"Unless you have a reason for doing otherwise, you should <emphasis>at least</"
+"emphasis> create a <filename>/boot</filename> partition and a <filename>/</"
+"filename> (root) partition. Depending on your system's hardware "
+"specifications, additional partitions may be necessary, such as <filename>/"
+"boot/efi</filename> for 64-bit AMD and Intel systems with UEFI firmware, a "
+"<systemitem>biosboot</systemitem> partition for AMD and Intel systems with a "
+"GUID Partition Table (GPT) label on the system disk, or a <systemitem>PReP "
+"Boot</systemitem> partition on IBM Power Systems servers."
+msgstr ""
+"Sauf si vous avez une raison de faire autrement, vous devez <emphasis>au "
+"minimum</emphasis> créer une partition <filename>/boot</filename> et une "
+"partition <filename>/</filename> (root). Selon les caractéristiques de votre "
+"matériel, des partitions additionnelles peuvent être nécessaires, comme une "
+"partition <filename>/boot/efi</filename> pour les systèmes AMD 64 bits et "
+"les systèmes Intel dotés d'un micrologiciel UEFI , une partition "
+"<systemitem>biosboot</systemitem> pour les systèmes AMD et Intel avec une "
+"table des partitions GUID (GPT), ou encore une partition <systemitem>PReP "
+"Boot</systemitem> sur les serveurs IBM Power."
+
+msgid ""
+"See <xref linkend=\"sect-installation-gui-manual-partitioning-recommended\" /"
+"> for more information about the recommended partitioning scheme."
+msgstr ""
+"Reportez-vous à la <xref linkend=\"sect-installation-gui-manual-partitioning-"
+"recommended\" /> pour plus d'information sur le schéma de partitionnement "
+"recommandé. "

@@ -1,0 +1,6 @@
+To be done:
+
+ * Treat also the first line of the message as it is not always empty
+ DONE: Possibility to change the trans dir by command line argument
+ * traiter le cas de changement préalable impossible
+ 

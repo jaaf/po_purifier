@@ -1,0 +1,62 @@
+# Jibec <jean-baptiste@holcroft.fr>, 2016. #zanata
+# José Fournier <jaaf64@zoraldia.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2015-12-15 14:06+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-05-05 09:10-0400\n"
+"Last-Translator: Jibec <jean-baptiste@holcroft.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 3.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+msgid "installation"
+msgstr "installation"
+
+msgid "partitioning"
+msgstr "partitionnement"
+
+msgid "install"
+msgstr "install"
+
+msgid "anaconda"
+msgstr "anaconda"
+
+msgid "kickstart"
+msgstr "kickstart"
+
+# translation auto-copied from project Fedora Installation Guide, version f18, document Book_Info, author jfenal
+msgid "Installation Guide"
+msgstr "Guide d'installation"
+
+msgid "Installing &PRODUCT;&nbsp;&PRODVER; on 32 and 64-bit AMD and Intel"
+msgstr ""
+"Installation de &PRODUCT;&nbsp;&PRODVER; sur AMD et Intel 32 et 64 bits"
+
+# translation auto-copied from project Fedora Installation Guide, version f18, document Book_Info
+msgid "Fedora"
+msgstr "Fedora"
+
+msgid ""
+"This manual explains how to boot the Fedora installation program, "
+"<application>Anaconda</application>, and how to install "
+"Fedora&nbsp;&PRODVER; on 32 and 64-bit AMD and Intel systems. It also covers "
+"advanced installation methods such as automated Kickstart installations, "
+"booting the installation from a network location, remote access to the "
+"installation system using VNC, and system upgrades from previous versions of "
+"Fedora. It also describes common post-installation tasks and explains how to "
+"troubleshoot common issues related to the installation."
+msgstr ""
+"Ce manuel explique comment démarrer l'installateur de Fedora, "
+"<application>Anaconda</application> et installer Fedora&nbsp;&PRODVER; sur "
+"des systèmes AMD et Intel 32 et 64 bits. Il couvre aussi les méthodes "
+"d'installation avancées comme les installations Kickstart automatisées, le "
+"démarrage de l'installation depuis un emplacement réseau, l'accès distant au "
+"système d'installation via VNC et les montées en niveau depuis des versions "
+"antérieures de Fedora. Il décrit également les tâches courantes de post "
+"installation et explique comment résoudre les problèmes communs relatifs à "
+"l'installation."

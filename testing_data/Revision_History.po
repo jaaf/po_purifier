@@ -1,0 +1,114 @@
+# Jibec <jean-baptiste@holcroft.fr>, 2016. #zanata
+# José Fournier <jaaf64@zoraldia.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2015-12-15 14:06+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-05-07 12:57-0400\n"
+"Last-Translator: José Fournier <jaaf64@zoraldia.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 3.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# translation auto-copied from project Fedora Installation Guide, version f18, document Revision_History, author jfenal
+msgid "Revision History"
+msgstr "Historique de modification"
+
+msgid ""
+"Note that revision numbers relate to the edition of this manual, not to "
+"version numbers of Fedora."
+msgstr ""
+"Notez que les numéros de révision sont relatifs à l'édition de ce manuel, "
+"pas aux numéro de version de Fedora."
+
+msgid "Petr"
+msgstr "Petr"
+
+msgid "Bokoč"
+msgstr "Bokoč"
+
+msgid "Fedora 23 Final release"
+msgstr "Version finale de Fedora 23"
+
+msgid "Kickstart commands and boot options updated for F23"
+msgstr "Commandes Kickstart et options de démarrage mises à jour pour F23"
+
+msgid "Many typo fixes"
+msgstr "Beaucoup de corrections de fautes de frappe"
+
+msgid "Fedora 22 Final release"
+msgstr "Version finale de Fedora 22"
+
+msgid ""
+"References to <application>Yum</application> replaced with <application>DNF</"
+"application> (the new default package manager)"
+msgstr ""
+"Références à <application>Yum</application> remplacées par des références à "
+"<application>DNF</application> (le nouveau gestionnaire de paquets)"
+
+msgid ""
+"Updates in boot options: <option>inst.dnf</option> replaced with "
+"<option>inst.nodnf</option>, added <option>inst.kdump_addon=</option>"
+msgstr ""
+"Mises à jour des options de démarrage : <option>inst.dnf</option> remplacée "
+"par <option>inst.nodnf</option>, ajout de l'option <option>inst.kdump_addon="
+"</option>"
+
+msgid ""
+"Updates in Kickstart: <command>%anaconda</command>, <command>%addon</"
+"command>, <command>sshkey</command>, <command>pwpolicy</command>"
+msgstr ""
+"Mises à jour dans Kickstart: <command>%anaconda</command>, <command>%addon</"
+"command>, <command>sshkey</command>, <command>pwpolicy</command>"
+
+msgid "Added the <guilabel>Kdump</guilabel> screen to the GUI docs"
+msgstr "Ajout de l'écran <guilabel>Kdump</guilabel> aux docs du GUI"
+
+msgid "Zach"
+msgstr "Zach"
+
+msgid "Oglesby"
+msgstr "Oglesby"
+
+msgid "Fixed Windows checksum steps, BZ#1175759"
+msgstr "Correction des étapes de sommes de contrôle de Windows, BZ#1175759"
+
+#, fuzzy
+msgid ""
+"Fixes in Boot Options: inst.headless is deprecated, inst.askmethod moved "
+"from removed to Installation Source"
+msgstr ""
+"Corrections dans les options de boot : inst.headless est obsolescente, inst."
+"askmethod retirée de la source d'installation."
+
+msgid ""
+"Parts of the network boot setup chapter have been updated with correct URLs"
+msgstr ""
+"Des parties de la configuration du démarrage réseau ont été mises à jour "
+"avec les URLs corrects."
+
+msgid ""
+"Updates in Recommended Partitioning Scheme and Advice on Partitions in the "
+"Manual Partitioning section of the installation chapter"
+msgstr ""
+"Mises à jour dans la section sur le schéma de partitionnement recommandé et "
+"dans les conseils sur les partitions dans le partitionnement manuel"
+
+msgid "Publishing for Fedora 21"
+msgstr "Publication de Fedora 21"
+
+msgid "Pete"
+msgstr "Pete"
+
+msgid "Travis"
+msgstr "Travis"
+
+msgid "added info on media types"
+msgstr "ajout d'informations sur les types de média"
+
+msgid "Publishing for Fedora 20"
+msgstr "Publication de Fedora 20"

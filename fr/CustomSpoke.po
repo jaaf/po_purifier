@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Manual Partitioning"
-msgstr "Partitionnement manuel"
+msgstr "Partitionnement 2MB manuel"
 
 msgid ""
 "The <guilabel>Manual Partitioning</guilabel> screen allows you to create a "

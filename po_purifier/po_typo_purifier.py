@@ -165,7 +165,7 @@ def colorize_spaces(text,includeNormal):
 
 # the purifying function itself: applies regex search and replace defined 
 #in typorules.py     
-def purify(message):
+def purify(message, b_first):#b_first = True if it is a first line
     global cpt_msg
     global fichier
     global target
@@ -285,33 +285,47 @@ maching string to be replaced %s') % (col.PROMPT,col.END))
                 
         # rebuild modified full content for next rule application
         content = preservedcontent+content
-                        
-    wrp= textwrap.TextWrapper(width=80,break_long_words=False,
+    if (b_first == False) :                 
+        wrp= textwrap.TextWrapper(width=80,break_long_words=False,
                               replace_whitespace=False, drop_whitespace=False)
-    lineList=wrp.wrap(content)
+        lineList=wrp.wrap(content)
     #we write the splitted message to target
            
-    modified = memcontent != content
+        modified = memcontent != content
     #print info for messages with no matches and messages with discarded matches 
-    if not modified:
-        print ( _('%s message %d of %s file, not changed %s') 
-                  %(col.OK,cpt_msg,fichier,col.END))
-    else:
-        print ( _('%s message %d of %s file has been changed as follows: %s')
-                   %(col.OK,cpt_msg, fichier, col.END))
-        for element in lineList:
-            print(col.BLUE+'"'+element+'"'+col.END)     
-        if with_pause == True:
-            input (_('%s Press any key to continue%s')
+        if not modified:
+            print ( _('%s message %d of %s file, not changed %s') 
+                      %(col.OK,cpt_msg,fichier,col.END))
+        else:
+            print ( _('%s message %d of %s file has been changed as follows: %s')
+                       %(col.OK,cpt_msg, fichier, col.END))
+            for element in lineList:
+                print(col.BLUE+'"'+element+'"'+col.END)     
+            if with_pause == True:
+                input (_('%s Press any key to continue%s')
                                  % (col.PROMPT, col.END))
 
-    for element in lineList:     
-        target.write('"'+element+'"\n')
-        #if modified:
-            #print (col.BLUE+'"'+element+'"'+col.END)
+        for element in lineList:     
+            target.write('"'+element+'"\n')
+           
    
-    target.write('\n')  
- 
+        target.write('\n')  
+    
+    else:
+        modified = memcontent != content
+        if not modified:
+            print ( _('%s message %d of %s file, not changed %s') 
+                      %(col.OK,cpt_msg,fichier,col.END))
+        else:
+            print ( _('%s message %d of %s file has been changed as follows: %s')
+                       %(col.OK,cpt_msg, fichier, col.END)) 
+            print (col.BLUE+ 'msgstr "'+content+'"'+col.END)
+            if with_pause == True:
+                print (col.FAILED+'this is a first line'+col.END)
+                input (_('%s Press any key to continue%s')
+                                 % (col.PROMPT, col.END))
+        target.write('msgstr "'+content+'"')
+        target.write('\n')  
 
 def usage():
    print (_("""po_typo_purifier.py [OPTIONS]
@@ -435,12 +449,14 @@ def main(argv):
             else:
                 #we are no longer in the message body
                 findMessage = True # reset the search for a new message
-                target.write('msgstr "'+messageFirst+'"\n')
-                purify(messageBody)# include the writting of the message
+                #target.write('msgstr "'+messageFirst+'"\n')
+                purify(messageFirst, True)
+                purify(messageBody,False)# include the writting of the message
 
         #we should not forget the last message
-        target.write('msgstr "'+messageFirst+'"\n')
-        purify(messageBody)# include the writting of the message
+        #target.write('msgstr "'+messageFirst+'"\n')
+        purify(messageFirst, True)
+        purify(messageBody,False)# include the writting of the message
 
         source.close()
         target.close()

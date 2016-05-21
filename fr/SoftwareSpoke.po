@@ -16,7 +16,7 @@ msgstr ""
 
 # translation auto-copied from project Fedora Installation Guide, version f20, document Package_Selection_common-title-1, author Gé Baylard
 msgid "Software Selection"
-msgstr "Sélection des logiciels"
+msgstr "Sélection: des logiciels"
 
 msgid ""
 "The <guilabel>Software Selection</guilabel> screen allows you to choose a "

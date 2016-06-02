@@ -23,7 +23,8 @@ import typorules # import typo rules
 
 
 target_dir = 'purified' # the dir where to place the purified files
-locale='fr'
+locale=typorules.locale
+language=typorules.language # the language code used for program localization
 debug=False
 with_pause = False
 rulenum=""
@@ -32,8 +33,12 @@ cpt_msg="0"
 fichier=""
 target=""
 tr_dir="" # the translation dir, where .po files lay
+
+#Be aware we are speaking of translation of the program hereafter
+#fr= gettext.translation('po_typo_purifier', localedir='locale', 
+                        # languages=['fr_FR.UTF-8'])
 fr= gettext.translation('po_typo_purifier', localedir='locale', 
-                         languages=['fr_FR.UTF-8'])
+                         languages=[language])
 fr.install()
 
 infoText = _("""
@@ -184,6 +189,8 @@ def purify(message, b_first):#b_first = True if it is a first line
     global target
     global dialog_change
     global dialog_accept
+    global locale
+
     # to be able in the end to know if message has been modified        
     memcontent = message 
     content=message
@@ -373,6 +380,7 @@ def main(argv):
     global infoText    
     global tr_dir 
     global with_pause
+    global locale
     
     tr_dir=locale         
                      

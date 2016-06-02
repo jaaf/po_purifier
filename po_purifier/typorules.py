@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # coding: utf8 
+
+locale='fr'
+language ='fr_FR.UTF-8' # the language code for localization of the program
 # trois croisillons indiquent une règle alternative non retenue
 # explicitation des caractères invisibles pour expliquer la regex : n espace normale, i insécable f fine insécable
 sr=[]

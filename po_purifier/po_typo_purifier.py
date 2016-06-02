@@ -11,6 +11,14 @@ import chardet
 import gettext
 #-----------------------------------------
 #CONFIGURATION PART
+
+
+
+
+
+
+
+
 import typorules # import typo rules
 
 
@@ -114,6 +122,10 @@ The user has several choices:
      Changing the short dash with a long dash in this case, allows to keep the 
      spaces and to  correct the fault in one shot.
 
+     - s to skip the message. This is useful when the message contains command 
+     output  or command with many options that cannot be considered as target 
+     language text and that triggers a lot of artificial typographic faults
+
      - anything else: to refuse the proposal.
 
 Once the message has been corrected (or not), it is split in 80 char lines 
@@ -122,8 +134,9 @@ anew. Then the lines are written in the target file.
 After that, the program passes to the next message until it reaches the end 
 of the file and passes to the next file.
 """)
-dialog_accept=_('y')
-dialog_change=_('c')
+dialog_accept=_('y') # accept proposal of change
+dialog_change=_('c') # make a prior change
+dialog_skip= _('s') # skip this message
 
 class col:
     MAUVE = '\033[95m'
@@ -175,7 +188,10 @@ def purify(message, b_first):#b_first = True if it is a first line
     memcontent = message 
     content=message
     # we start purification on the concatenated message
-    for p in pat:                
+    skip_message=False
+    for p in pat:    
+        if (skip_message == True):
+            break # the user asked to skip the message
         try:
            #we execute the search and replace and save the result
            newcontent=p[0].subn(p[1],content,count=1) 
@@ -208,10 +224,12 @@ Rule: %s %s')
                 # ask user confirmation             
                 confirm = input(
                               _('%s Do you confirm this change? (\
-%s %s %s for yes, %s %s %s for prior change,%s any thing else – like return – \
+%s %s %s for yes, %s %s %s for prior change,%s %s %s to skip this message, %s \
+any thing else – like return – \
 %s for no)%s')
                                 % (col.PROMPT, col.FAILED,dialog_accept,
-col.PROMPT,col.FAILED,dialog_change,col.PROMPT,col.FAILED,col.PROMPT,col.END)) 
+col.PROMPT,col.FAILED,dialog_change,col.PROMPT,col.FAILED,dialog_skip,
+col.PROMPT,col.FAILED,col.PROMPT,col.END)) 
                         
                 if (confirm == dialog_accept):# or confirm == 'O'):
                    print (_('%sChange accepted %s') %(col.OK,col.END))
@@ -228,6 +246,10 @@ change the message at all. %s\n') %(col.FAILED,col.END))
                        content = content[sp[1]:] 
                    else:
                        content = newcontent[0] # we keep substitution
+
+                elif (confirm == dialog_skip):
+                    skip_message = True
+                    break # we want to skip this message definitely 
 
                 elif (confirm == dialog_change): 
                     oldcontent = content
@@ -294,10 +316,11 @@ maching string to be replaced %s') % (col.PROMPT,col.END))
         modified = memcontent != content
     #print info for messages with no matches and messages with discarded matches 
         if not modified:
-            print ( _('%s message %d of %s file, not changed %s') 
+            print ( _('%s body of message %d of %s file, not changed %s') 
                       %(col.OK,cpt_msg,fichier,col.END))
         else:
-            print ( _('%s message %d of %s file has been changed as follows: %s')
+            print ( _('%s body of message %d of %s file has been changed as \
+follows: %s')
                        %(col.OK,cpt_msg, fichier, col.END))
             for element in lineList:
                 print(col.BLUE+'"'+element+'"'+col.END)     
@@ -314,10 +337,11 @@ maching string to be replaced %s') % (col.PROMPT,col.END))
     else:
         modified = memcontent != content
         if not modified:
-            print ( _('%s message %d of %s file, not changed %s') 
+            print ( _('%s first line of message %d of %s file, not changed %s') 
                       %(col.OK,cpt_msg,fichier,col.END))
         else:
-            print ( _('%s message %d of %s file has been changed as follows: %s')
+            print ( _('%s first line of message %d of %s file has been changed \
+as follows: %s')
                        %(col.OK,cpt_msg, fichier, col.END)) 
             print (col.BLUE+ 'msgstr "'+content+'"'+col.END)
             if with_pause == True:
@@ -405,7 +429,7 @@ def main(argv):
 
     for fichier in listdir('../'+tr_dir+'/'):
         cpt_msg=0
-        print (' la trans dir est : '+tr_dir)
+        print ('Nouveau message,la trans dir est : '+tr_dir)
         print ('../'+tr_dir+'/'+fichier,'r')
         source=open('../'+tr_dir+'/'+fichier,'r')
         target=open('../'+target_dir+'/'+fichier,'a')

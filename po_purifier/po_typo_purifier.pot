@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-05-20 07:25+CEST\n"
+"POT-Creation-Date: 2016-06-02 06:33+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: po_typo_purifier.py:31
+#: po_typo_purifier.py:39
 msgid ""
 "\n"
 "\n"
@@ -103,6 +103,10 @@ msgid ""
 "     Changing the short dash with a long dash in this case, allows to keep the \n"
 "     spaces and to  correct the fault in one shot.\n"
 "\n"
+"     - s to skip the message. This is useful when the message contains command \n"
+"     output  or command with many options that cannot be considered as target \n"
+"     language text and that triggers a lot of artificial typographic faults\n"
+"\n"
 "     - anything else: to refuse the proposal.\n"
 "\n"
 "Once the message has been corrected (or not), it is split in 80 char lines \n"
@@ -112,100 +116,112 @@ msgid ""
 "of the file and passes to the next file.\n"
 msgstr ""
 
-#: po_typo_purifier.py:125
+#: po_typo_purifier.py:137
 msgid "y"
 msgstr ""
 
-#: po_typo_purifier.py:126
+#: po_typo_purifier.py:138
 msgid "c"
 msgstr ""
 
-#: po_typo_purifier.py:150
+#: po_typo_purifier.py:139
+msgid "s"
+msgstr ""
+
+#: po_typo_purifier.py:163
 msgid "%s %s non-breakable space"
 msgstr ""
 
-#: po_typo_purifier.py:151
+#: po_typo_purifier.py:164
 msgid "%s %s narrow non-breakable space"
 msgstr ""
 
-#: po_typo_purifier.py:152
+#: po_typo_purifier.py:165
 msgid "%s %s narrow breakable space"
 msgstr ""
 
-#: po_typo_purifier.py:156
+#: po_typo_purifier.py:169
 msgid "%s %s normal space"
 msgstr ""
 
-#: po_typo_purifier.py:184
+#: po_typo_purifier.py:200
 msgid "%s Error while applying the following rule:%s %s"
 msgstr ""
 
-#: po_typo_purifier.py:188
+#: po_typo_purifier.py:204
 msgid "k + return pour continuer"
 msgstr ""
 
-#: po_typo_purifier.py:204
+#: po_typo_purifier.py:220
 msgid "%s Change suggested in message %d of the %s file; Rule: %s %s"
 msgstr ""
 
-#: po_typo_purifier.py:210
-msgid "%s Do you confirm this change? (%s %s %s for yes, %s %s %s for prior change,%s any thing else – like return – %s for no)%s"
+#: po_typo_purifier.py:226
+msgid "%s Do you confirm this change? (%s %s %s for yes, %s %s %s for prior change,%s %s %s to skip this message, %s any thing else – like return – %s for no)%s"
 msgstr ""
 
-#: po_typo_purifier.py:217
+#: po_typo_purifier.py:235
 msgid "%sChange accepted %s"
 msgstr ""
 
-#: po_typo_purifier.py:222
+#: po_typo_purifier.py:240
 msgid ""
 "%s Warning: application of the rule doesn't change the message at all. %s\n"
 msgstr ""
 
-#: po_typo_purifier.py:237
+#: po_typo_purifier.py:259
 msgid "%s You asked for a prior change into the found  matching string %s"
 msgstr ""
 
-#: po_typo_purifier.py:240
+#: po_typo_purifier.py:262
 msgid "%s Please enter the part of the maching string to be replaced %s"
 msgstr ""
 
-#: po_typo_purifier.py:242
+#: po_typo_purifier.py:264
 msgid "%s Please enter the substitute string %s"
 msgstr ""
 
-#: po_typo_purifier.py:249
+#: po_typo_purifier.py:271
 msgid "%s New content %s"
 msgstr ""
 
-#: po_typo_purifier.py:252
+#: po_typo_purifier.py:274
 msgid "%sNothing can be changed! Please try again.%s"
 msgstr ""
 
-#: po_typo_purifier.py:254 po_typo_purifier.py:305
+#: po_typo_purifier.py:276 po_typo_purifier.py:328 po_typo_purifier.py:349
 msgid "%s Press any key to continue%s"
 msgstr ""
 
-#: po_typo_purifier.py:259
+#: po_typo_purifier.py:281
 msgid "%s Do you confirm this prior change? (%s %s %s for yes, %s anything else %s for no)%s"
 msgstr ""
 
-#: po_typo_purifier.py:265
+#: po_typo_purifier.py:287
 msgid "%s change confirmed %s"
 msgstr ""
 
-#: po_typo_purifier.py:276
+#: po_typo_purifier.py:298
 msgid "%s change discarded %s"
 msgstr ""
 
-#: po_typo_purifier.py:297
-msgid "%s message %d of %s file, not changed %s"
+#: po_typo_purifier.py:319
+msgid "%s body of message %d of %s file, not changed %s"
 msgstr ""
 
-#: po_typo_purifier.py:300
-msgid "%s message %d of %s file has been changed as follows: %s"
+#: po_typo_purifier.py:322
+msgid "%s body of message %d of %s file has been changed as follows: %s"
 msgstr ""
 
-#: po_typo_purifier.py:317
+#: po_typo_purifier.py:340
+msgid "%s first line of message %d of %s file, not changed %s"
+msgstr ""
+
+#: po_typo_purifier.py:343
+msgid "%s first line of message %d of %s file has been changed as follows: %s"
+msgstr ""
+
+#: po_typo_purifier.py:355
 msgid ""
 "po_typo_purifier.py [OPTIONS]\n"
 "   OPTIONS:\n"
@@ -218,11 +234,11 @@ msgid ""
 "   "
 msgstr ""
 
-#: po_typo_purifier.py:384
+#: po_typo_purifier.py:422
 msgid "Compiling typo rule: %s"
 msgstr ""
 
-#: po_typo_purifier.py:389
+#: po_typo_purifier.py:427
 msgid "The rule has been compiled"
 msgstr ""
 
